@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "api": "pnpm --filter ws-qn-api nest",
+    "app": "pnpm --filter ws-qn-app quasar"
+  },
+  "pnpm": {
+    "overrides": {
+      "ws-qn-api": "workspace:*"
+    }
+  }
+}

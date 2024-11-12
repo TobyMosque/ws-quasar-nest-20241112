@@ -14,7 +14,6 @@ export default ssrMiddleware(async ({ app, render, serve }) => {
   const nest = await bootstrap({
     app,
     async render({ req, res }: { req: Request, res: Response }) {
-      console.log('render')
       res.setHeader('Content-Type', 'text/html');
 
       try 
@@ -25,7 +24,6 @@ export default ssrMiddleware(async ({ app, render, serve }) => {
       catch (e)
       {
         const err = e as RenderError
-        console.log(err)
         // oops, we had an error while rendering the page
         // we were told to redirect to another URL
         if (err.url) {

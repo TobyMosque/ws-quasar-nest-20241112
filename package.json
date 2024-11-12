@@ -2,7 +2,11 @@
   "private": true,
   "scripts": {
     "api": "pnpm --filter ws-qn-api nest",
-    "app": "pnpm --filter ws-qn-app quasar"
+    "app": "pnpm --filter ws-qn-app quasar",
+    "frontend": "pnpm app dev -m spa",
+    "backend": "pnpm api start --watch",
+    "monolith": "pnpm app dev -m ssr",
+    "postinstall": "pnpm api build"
   },
   "pnpm": {
     "overrides": {

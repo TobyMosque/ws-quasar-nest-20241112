@@ -23,11 +23,9 @@ async function bootstrap({
   app.setGlobalPrefix('api');
   app.useGlobalFilters({
     async catch(exception, host) {
-      console.log(exception)
       const ctx = host.switchToHttp();
       const status = exception.getStatus() as number;
       const next = ctx.getNext();
-      console.log(status, render)
       if (status === 404 && render) {
         const req = ctx.getRequest<Request>();
         const res = ctx.getResponse<Response>();
